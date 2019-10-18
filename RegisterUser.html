@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+<form action="./InsertUserServlet" method="post">
+Enter Email:<br>
+<input type="text" name="email"><br><br>
+Enter Password:<br>
+<input type="password" name="password"><br><br>
+Enter your Name:<br>
+<input type="text" name="name"><br><br>
+Enter MobileNumber:<br>
+<input type="number" name="mobile"><br><br>
+Enter Location:<br>
+<input type="text" name="location"><br><br>
+Enter Date of Birth:<br>
+<input type="text" id="bdate" name="dob"><br><br>
+<script>
+$(function()
+		{
+			$("#bdate").datepicker
+			({
+				dateFormat:"ddmmyy",
+				changeMonth:true,
+				changeYear:true
+			});
+		});
+</script>
+Enter Security Question:<br>
+<input type="text" name="securityQ"><br><br>
+Enter Answer:<br>
+<input type="text" name="answer"><br><br>
+Enter PinCode:<br>
+<input type="number" name="pincode"><br><br>
+
+<input type="submit" value="REGISTER">
+</form>
+</body>
+</html>
