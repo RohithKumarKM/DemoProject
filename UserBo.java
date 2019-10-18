@@ -24,4 +24,17 @@ public class UserBo
 		boolean a = ps.execute();
 		return a;
 	}
+	public List<User> getAllusers() throws Exception
+	{
+		Connection con = MyConnection.getConnection();
+		PreparedStatement ps = con.prepareStatement("select * from user1");
+		List<User> li = new ArrayList<User>();
+		
+		ResultSet rs = ps.executeQuery();
+		while(rs.next())
+		{
+			li.add(new User(rs.getString(1),rs.getString(2),rs.getString(3),rs.getLong(4),rs.getString(5),rs.getDate(6).toLocalDate(),rs.getString(7),rs.getString(8),rs.getInt(9)));
+			System.out.println();
+		}
+		return li;
 }
